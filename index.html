@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Artisan Bridge: Handicraft Entrepreneurship Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FEFBF6;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        .section-card {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #F0EBE3;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-card {
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            border-left: 5px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .flow-arrow {
+            position: relative;
+            padding-right: 2rem;
+        }
+        .flow-arrow::after {
+            content: '→';
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #FF6B6B;
+        }
+        .impact-card {
+            transition: all 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="max-w-7xl mx-auto p-4 md:p-8 lg:p-12">
+
+        <header class="text-center py-12">
+            <h1 class="text-5xl md:text-7xl font-bold" style="color: #1A535C;">The Artisan Bridge</h1>
+            <p class="text-xl md:text-2xl mt-4" style="color: #4ECDC4;">Analyzing the Global Impact and Sustainable Future of Handicraft Entrepreneurship</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="overview" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-4" style="color: #1A535C;">A Trillion-Dollar Craft Economy</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12" style="color: #495057;">The global handicrafts market is not a niche sector but a massive and rapidly growing economic force. This growth is fueled by a fundamental shift in consumer values towards authenticity, sustainability, and digital accessibility, creating fertile ground for a new generation of entrepreneurs.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="kpi-card p-6 rounded-2xl" style="border-color: #FF6B6B;">
+                        <div class="text-5xl font-bold" style="color: #FF6B6B;">$906.8B</div>
+                        <div class="mt-2 text-lg font-semibold" style="color: #1A535C;">2024 Market Value</div>
+                    </div>
+                    <div class="kpi-card p-6 rounded-2xl" style="border-color: #4ECDC4;">
+                        <div class="text-5xl font-bold" style="color: #4ECDC4;">8.83%</div>
+                        <div class="mt-2 text-lg font-semibold" style="color: #1A535C;">Projected CAGR</div>
+                    </div>
+                    <div class="kpi-card p-6 rounded-2xl" style="border-color: #FFE66D;">
+                        <div class="text-5xl font-bold" style="color: #FFE66D;">$1.94T</div>
+                        <div class="mt-2 text-lg font-semibold" style="color: #1A535C;">2033 Market Forecast</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="spectrum" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-4" style="color: #1A535C;">The Entrepreneurial Spectrum</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12" style="color: #495057;">The modern "handicraft entrepreneur" is not a single archetype. They operate across a spectrum of models, from purely commercial aggregators to mission-driven activists, each with a different approach to balancing profit and purpose.</p>
+                <div class="chart-container mx-auto">
+                    <canvas id="entrepreneurialModelsChart"></canvas>
+                </div>
+                <p class="text-center text-sm mt-4" style="color: #495057;">This chart compares the primary mission of different entrepreneurial models, highlighting the tension between maximizing profit and maximizing social impact. The size of the bubble indicates the model's relative scale in the current market.</p>
+            </section>
+
+            <section id="impact" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-12" style="color: #1A535C;">A Bifurcated Impact on Craftspersons</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="impact-card p-8 rounded-2xl" style="background-color: #EFFFFB;">
+                        <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #1A535C;"><span class="text-4xl mr-4">👍</span>Pathways to Prosperity</h3>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#4ECDC4;">•</span><div><strong class="font-semibold">Economic Upliftment:</strong> Bypassing exploitative middlemen allows artisans to command fairer prices and earn stable, transformative incomes.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#4ECDC4;">•</span><div><strong class="font-semibold">Global Market Access:</strong> Digital platforms dismantle geographical barriers, connecting rural artisans to a worldwide audience and insulating them from local market volatility.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#4ECDC4;">•</span><div><strong class="font-semibold">Cultural Revitalization:</strong> Creating viable modern markets for traditional skills provides a powerful economic incentive for heritage preservation.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#4ECDC4;">•</span><div><strong class="font-semibold">Empowerment of Women:</strong> The sector is a major employer of women, offering flexible, home-based work that provides a pathway to financial independence.</div></li>
+                        </ul>
+                    </div>
+                    <div class="impact-card p-8 rounded-2xl" style="background-color: #FFEEEE;">
+                        <h3 class="text-3xl font-bold mb-6 flex items-center" style="color: #C34A36;"><span class="text-4xl mr-4">👎</span>Perils of the New Marketplace</h3>
+                        <ul class="space-y-4 text-lg">
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#FF6B6B;">•</span><div><strong class="font-semibold">Digital Dependency:</strong> Artisans trade reliance on local middlemen for dependency on global digital platforms with opaque algorithms and rising fees.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#FF6B6B;">•</span><div><strong class="font-semibold">The Digital Divide:</strong> Success requires a suite of non-craft skills (marketing, SEO, photography), excluding many artisans who lack training or internet access.</div></li>
+                            <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#FF6B6B;">•</span><div><strong class="font-semibold">Commodification of Culture:</strong> Pressure to appeal to global trends can lead to the dilution of authentic heritage and cultural appropriation by fast fashion.</div></li>
+                             <li class="flex items-start"><span class="font-bold text-2xl mr-3" style="color:#FF6B6B;">•</span><div><strong class="font-semibold">Authenticity Crisis:</strong> The influx of mass-produced items on "handmade" platforms forces genuine artisans to compete on price, eroding trust.</div></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="sustainability" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-4" style="color: #1A535C;">Forging a Sustainable Future</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12" style="color: #495057;">For entrepreneurs, a deep commitment to sustainability is a core strategic imperative. A truly resilient craft economy is built on three interconnected pillars, transforming products from commodities into tangible expressions of a more conscious worldview.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 border-t-8 rounded-2xl" style="border-color: #4ECDC4; background-color: #F8F9FA;">
+                        <div class="text-5xl mb-4">🌍</div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: #1A535C;">Environmental</h3>
+                        <p style="color: #495057;">Championing the use of natural, local, and recycled materials while promoting low-impact, manual production methods to minimize the ecological footprint.</p>
+                    </div>
+                    <div class="text-center p-6 border-t-8 rounded-2xl" style="border-color: #FF6B6B; background-color: #F8F9FA;">
+                        <div class="text-5xl mb-4">🤝</div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: #1A535C;">Social</h3>
+                        <p style="color: #495057;">Implementing Fair Trade principles to guarantee living wages and safe working conditions, investing in the well-being of artisan communities.</p>
+                    </div>
+                    <div class="text-center p-6 border-t-8 rounded-2xl" style="border-color: #FFE66D; background-color: #F8F9FA;">
+                        <div class="text-5xl mb-4">🏛️</div>
+                        <h3 class="text-2xl font-bold mb-2" style="color: #1A535C;">Cultural</h3>
+                        <p style="color: #495057;">Using digital storytelling and thoughtful design intervention to ensure cultural heritage remains economically viable and relevant for future generations.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="casestudies" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-12" style="color: #1A535C;">Vanguards of Craft: Global & Indian Case Studies</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-center" style="color: #1A535C;">Top 10 Global Entrepreneurs</h3>
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Ten Thousand Villages (USA):</strong> The Fair Trade Pioneer</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Novica (USA):</strong> The Impact Marketplace at Scale</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>MADE51 (Global/UNHCR):</strong> The Humanitarian-Social Enterprise Model</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Artisans Cooperative (USA):</strong> The Disruptive, Member-Owned Platform</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Etsy (USA):</strong> The Dominant Commercial Marketplace</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Jaipur Rugs (India):</strong> The "Gandhian" Social Enterprise Model</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Community Clothing (UK):</strong> Revitalizing Local Manufacturing</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Fakih Group (UAE):</strong> The Large-Scale Exporter</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Café Jacqueline (USA):</strong> The Artisan as Micro-Entrepreneur</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Marchi Family Printworks (Italy):</strong> Multi-Generational Heritage Preservation</div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-center" style="color: #1A535C;">Top 10 Indian Entrepreneurs</h3>
+                        <div class="space-y-3">
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Fabindia:</strong> The Community-Owned Retail Giant</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Dastkar:</strong> The Foundational NGO & Market-Maker</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Anokhi:</strong> The Design-Led Heritage Brand</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Good Earth:</strong> Defining Sustainable Indian Luxury</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>The India Craft House:</strong> Curated Social Enterprise Platform</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Gaatha:</strong> The Storytelling & Digital Archiving Model</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Okhai:</strong> Women's Empowerment & Marketplace Model</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>iTokri:</strong> High-Volume, Artisan-Centric E-commerce</div>
+                            <div class="p-4 rounded-lg bg-gray-50"><strong>Three Sixty (Vikash Gupta):</strong> Modern "Made in India" Luxury</div>
+                            <div class="p-4 rounded-lg bg-gray-100"><strong>Ram Gopal Saini:</strong> The Master Artisan as a Global Brand</div>
+                        </div>
+                    </div>
+                </div>
+                 <p class="text-center text-sm mt-8" style="color: #495057;">These entrepreneurs and organizations represent the diverse strategies being employed to sustain and modernize the rich heritage of craft, from large-scale retail and social enterprises to design-led brands and foundational NGOs.</p>
+            </section>
+            
+            <section id="future" class="section-card p-8 md:p-12">
+                <h2 class="text-4xl font-bold text-center mb-4" style="color: #1A535C;">Strategic Imperatives for the Future</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12" style="color: #495057;">The path to a resilient and equitable craft economy requires a coordinated effort. Key stakeholders must adopt new strategies to navigate the challenges and opportunities of the modern market.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="p-6 rounded-2xl text-center" style="background-color: #F8F9FA;">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #1A535C;">For Artisans</h3>
+                        <p class="mb-4" style="color: #495057;">Must become "bilingual," fluent in both their craft and digital tools. Embrace storytelling, diversify sales channels, and lean into customization.</p>
+                        <span class="text-4xl">🎨</span>
+                    </div>
+                    <div class="p-6 rounded-2xl text-center" style="background-color: #F8F9FA;">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #1A535C;">For Entrepreneurs</h3>
+                        <p class="mb-4" style="color: #495057;">Must curate authenticity with rigor, invest in artisan enablement and training, and foster community and experiences over simple transactions.</p>
+                        <span class="text-4xl">💡</span>
+                    </div>
+                    <div class="p-6 rounded-2xl text-center" style="background-color: #F8F9FA;">
+                        <h3 class="text-2xl font-bold mb-4" style="color: #1A535C;">For Policymakers</h3>
+                        <p class="mb-4" style="color: #495057;">Must fund "Craft-Tech" innovation, shift support to digital infrastructure, and strengthen legal protections for cultural heritage (e.g., GIs).</p>
+                        <span class="text-4xl">📜</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-12 mt-8 border-t border-gray-200">
+            <p style="color: #495057;">Infographic based on the report: "The Artisan Bridge: Analyzing the Global Impact and Sustainable Future of Handicraft Entrepreneurship."</p>
+            <p class="text-sm mt-2" style="color: #6c757d;">Generated on August 11, 2025.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function wrapText(text) {
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = '';
+            const maxLineLength = 16;
+
+            words.forEach(word => {
+                if ((currentLine + ' ' + word).length > maxLineLength) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine = currentLine ? currentLine + ' ' + word : word;
+                }
+            });
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const entrepreneurData = {
+            labels: [
+                wrapText('Commercial Marketplace'),
+                wrapText('Social Enterprise'),
+                wrapText('Fair Trade Non-Profit'),
+                wrapText('Artisan-Owned Cooperative'),
+                wrapText('Humanitarian Initiative')
+            ],
+            datasets: [{
+                label: 'Entrepreneurial Models',
+                data: [
+                    { x: 8, y: 9, r: 30, label: 'Etsy, Amazon Handmade' }, 
+                    { x: 5, y: 6, r: 20, label: 'Novica, Good Earth' },
+                    { x: 2, y: 7, r: 15, label: 'Ten Thousand Villages' },
+                    { x: 1, y: 2, r: 10, label: 'Artisans Cooperative' },
+                    { x: 3, y: 4, r: 12, label: 'MADE51 by UNHCR' }
+                ],
+                backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFE66D', '#1A535C'],
+                borderColor: '#fff',
+                borderWidth: 2,
+            }]
+        };
+
+        const ctx = document.getElementById('entrepreneurialModelsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bubble',
+            data: entrepreneurData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Profit Maximization →',
+                            color: '#495057',
+                            font: { size: 14 }
+                        },
+                        grid: {
+                            display: false
+                        },
+                         ticks: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Social Impact →',
+                            color: '#495057',
+                            font: { size: 14 }
+                        },
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback,
+                            label: function(context) {
+                                const item = context.dataset.data[context.dataIndex];
+                                return item.label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
